@@ -1,714 +1,189 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" data-theme="light">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>प्रतीक साहित्यिक सङ्ग्रह</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@300;400;600;700&family=Eczar:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>प्रतीक साहित्य</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&family=Gotu&display=swap" rel="stylesheet">
+
 <style>
-/* ══ THEMES ══ */
 :root{
-  --bg:#0a0a0f;--surface:#111118;--surface2:#1a1a24;
-  --border:rgba(180,150,255,0.12);
-  --accent:#b48eff;--accent2:#ff8edb;--accent3:#8effd4;
-  --text:#e8e0ff;--text-muted:#7a6f99;--gold:#ffd98a;
-  --orb1:rgba(180,142,255,0.07);--orb2:rgba(255,142,219,0.06);--orb3:rgba(142,255,212,0.04);
-  --nav-bg:rgba(10,10,15,0.78);
-  --hero-grad:linear-gradient(135deg,#ffffff 30%,var(--accent) 60%,var(--accent2) 100%);
-  --font-body:'Noto Serif Devanagari',serif;
+  --bg:#f5f0ea;
+  --surface:#fff;
+  --text:#000;
+  --accent:#7c3aed;
+  --font:'Noto Serif Devanagari','Gotu','Mangal','Kalimati',serif;
 }
+
 [data-theme="midnight"]{
-  --bg:#03060d;--surface:#07101e;--surface2:#0d1a2e;
-  --border:rgba(56,189,248,0.13);
-  --accent:#38bdf8;--accent2:#818cf8;--accent3:#34d399;
-  --text:#e0f2fe;--text-muted:#4a6fa5;--gold:#fbbf24;
-  --orb1:rgba(56,189,248,0.07);--orb2:rgba(129,140,248,0.06);--orb3:rgba(52,211,153,0.04);
-  --nav-bg:rgba(3,6,13,0.82);
-  --hero-grad:linear-gradient(135deg,#fff 20%,#38bdf8 55%,#818cf8 100%);
-}
-[data-theme="saffron"]{
-  --bg:#0f0800;--surface:#1a1000;--surface2:#261800;
-  --border:rgba(251,146,60,0.15);
-  --accent:#fb923c;--accent2:#facc15;--accent3:#f87171;
-  --text:#fef3c7;--text-muted:#92400e;--gold:#fde68a;
-  --orb1:rgba(251,146,60,0.08);--orb2:rgba(250,204,21,0.06);--orb3:rgba(248,113,113,0.04);
-  --nav-bg:rgba(15,8,0,0.82);
-  --hero-grad:linear-gradient(135deg,#fff 20%,#fb923c 55%,#facc15 100%);
-}
-[data-theme="forest"]{
-  --bg:#020c06;--surface:#061409;--surface2:#0c200f;
-  --border:rgba(74,222,128,0.13);
-  --accent:#4ade80;--accent2:#a3e635;--accent3:#86efac;
-  --text:#dcfce7;--text-muted:#3d6b4a;--gold:#fde68a;
-  --orb1:rgba(74,222,128,0.07);--orb2:rgba(163,230,53,0.05);--orb3:rgba(134,239,172,0.04);
-  --nav-bg:rgba(2,12,6,0.82);
-  --hero-grad:linear-gradient(135deg,#fff 20%,#4ade80 55%,#a3e635 100%);
-}
-[data-theme="rose"]{
-  --bg:#0f0509;--surface:#1a0a10;--surface2:#260f18;
-  --border:rgba(251,113,133,0.15);
-  --accent:#fb7185;--accent2:#f472b6;--accent3:#c084fc;
-  --text:#ffe4e6;--text-muted:#9f1239;--gold:#fde68a;
-  --orb1:rgba(251,113,133,0.08);--orb2:rgba(244,114,182,0.06);--orb3:rgba(192,132,252,0.04);
-  --nav-bg:rgba(15,5,9,0.82);
-  --hero-grad:linear-gradient(135deg,#fff 20%,#fb7185 55%,#f472b6 100%);
-}
-[data-theme="light"]{
-  --bg:#f5f0ea;--surface:#ffffff;--surface2:#ede6dc;
-  --border:rgba(100,60,20,0.1);
-  --accent:#7c3aed;--accent2:#db2777;--accent3:#059669;
-  --text:#1c1410;--text-muted:#78716c;--gold:#b45309;
-  --orb1:rgba(124,58,237,0.05);--orb2:rgba(219,39,119,0.04);--orb3:rgba(5,150,105,0.03);
-  --nav-bg:rgba(245,240,234,0.88);
-  --hero-grad:linear-gradient(135deg,#1c1410 20%,#7c3aed 55%,#db2777 100%);
+  --bg:#0a0a0f;
+  --surface:#111;
+  --text:#fff;
 }
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;overflow-x:hidden;transition:background .35s,color .35s;}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.35;}
-.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;animation:drift 18s ease-in-out infinite alternate;}
-.orb1{width:600px;height:600px;background:var(--orb1);top:-200px;left:-200px;}
-.orb2{width:500px;height:500px;background:var(--orb2);bottom:-100px;right:-100px;animation-delay:-8s;}
-.orb3{width:400px;height:400px;background:var(--orb3);top:40%;left:50%;animation-delay:-4s;}
-@keyframes drift{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,40px) scale(1.05);}}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+}
 
-/* ══ NAV ══ */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.4rem;display:flex;align-items:center;justify-content:space-between;height:66px;background:var(--nav-bg);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:background .35s;}
-.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.42rem;color:var(--gold);}
-.nav-logo span{color:var(--accent);font-style:normal;}
-.nav-links{display:flex;gap:1.7rem;list-style:none;}
-.nav-links a{text-decoration:none;color:var(--text-muted);font-size:.86rem;letter-spacing:.04em;transition:color .25s;cursor:pointer;}
-.nav-links a:hover{color:var(--accent);}
-.nav-right{display:flex;align-items:center;gap:.55rem;}
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 20px;
+  background:var(--surface);
+}
 
-.nav-clock{display:flex;flex-direction:column;align-items:flex-end;margin-right:.35rem;cursor:default;line-height:1.25;}
-.nav-clock-time{font-family:'DM Mono',monospace;font-size:.83rem;color:var(--accent);}
-.nav-clock-date{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--text-muted);}
+input{
+  padding:6px;
+}
 
-.icon-btn{background:none;border:1px solid var(--border);color:var(--text-muted);border-radius:9px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;transition:all .25s;}
-.icon-btn:hover{border-color:var(--accent);color:var(--accent);}
+/* CATEGORY */
+.cat{
+  text-align:center;
+  margin:10px;
+}
+.cat button{
+  margin:5px;
+}
 
-/* ══ 3-DOT PANEL ══ */
-.dot-menu-wrap{position:relative;}
-.dot-btn{background:none;border:1px solid var(--border);color:var(--text-muted);border-radius:9px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.15rem;transition:all .25s;}
-.dot-btn:hover{border-color:var(--accent);color:var(--accent);}
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  padding:20px;
+}
 
-.dot-panel{position:absolute;top:calc(100% + 10px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.25rem;min-width:290px;z-index:400;box-shadow:0 24px 64px rgba(0,0,0,.55);display:none;animation:panelIn .22s ease;}
-.dot-panel.open{display:block;}
-@keyframes panelIn{from{opacity:0;transform:translateY(-8px) scale(.97);}to{opacity:1;transform:none;}}
+.card{
+  background:var(--surface);
+  padding:10px;
+  border-radius:10px;
+  cursor:pointer;
+}
 
-.p-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.25em;color:var(--text-muted);text-transform:uppercase;margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
-.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.42rem;margin-bottom:1.1rem;}
-.theme-swatch{border:2px solid transparent;border-radius:11px;padding:.5rem .3rem;cursor:pointer;transition:all .2s;text-align:center;background:var(--surface2);}
-.theme-swatch:hover,.theme-swatch.active{border-color:var(--accent);}
-.swatch-dot{width:22px;height:22px;border-radius:50%;margin:0 auto .28rem;border:2px solid rgba(255,255,255,.12);}
-.swatch-label{font-family:'DM Mono',monospace;font-size:.58rem;color:var(--text-muted);display:block;}
-.font-row{display:flex;gap:.4rem;}
-.font-btn{flex:1;padding:.55rem .3rem;border-radius:10px;border:2px solid var(--border);background:var(--surface2);cursor:pointer;transition:all .2s;text-align:center;color:var(--text-muted);font-size:.8rem;line-height:1.3;}
-.font-btn:hover,.font-btn.active{border-color:var(--accent);color:var(--text);}
-.font-btn .fp{display:block;font-size:1.1rem;margin-bottom:.1rem;}
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+.modal.show{display:flex;}
 
-/* ══ HERO ══ */
-#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;z-index:1;}
-.hero-tag{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;margin-bottom:1.4rem;opacity:0;animation:fadeUp 1s ease .3s forwards;}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7rem);font-weight:700;line-height:1.05;background:var(--hero-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:fadeUp 1s ease .5s forwards;}
-.hero-sub{margin-top:1.4rem;font-size:1rem;color:var(--text-muted);font-weight:300;max-width:460px;opacity:0;animation:fadeUp 1s ease .7s forwards;}
+.modal-box{
+  background:#fff;
+  padding:20px;
+  max-width:500px;
+}
 
-/* CLOCK WIDGET */
-.hero-clock-wrap{margin-top:2.2rem;display:flex;align-items:center;gap:1.6rem;opacity:0;animation:fadeUp 1s ease .88s forwards;flex-wrap:wrap;justify-content:center;}
-.hero-clock-box{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:.9rem 1.6rem;backdrop-filter:blur(8px);text-align:center;min-width:160px;}
-.hero-time{font-family:'DM Mono',monospace;font-size:2rem;color:var(--accent);letter-spacing:.05em;line-height:1;}
-.hero-ampm{font-size:.85rem;color:var(--text-muted);margin-left:.25rem;}
-.hero-date-ad{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--text-muted);margin-top:.3rem;}
-.vdiv{width:1px;height:52px;background:var(--border);}
-.hero-bs-wrap{text-align:left;}
-.bs-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:.2rem;}
-.bs-date{font-size:1.08rem;color:var(--text);font-weight:600;}
-.bs-day{font-size:.72rem;color:var(--text-muted);margin-top:.08rem;}
-
-.hero-quote-box{margin-top:2.2rem;padding:1.3rem 2.2rem;border:1px solid var(--border);border-radius:16px;background:rgba(180,142,255,.04);backdrop-filter:blur(8px);max-width:570px;position:relative;opacity:0;animation:fadeUp 1s ease 1.02s forwards;}
-.hero-quote-box::before{content:'"';position:absolute;top:-17px;left:16px;font-size:4.5rem;font-family:'Playfair Display',serif;color:var(--accent);opacity:.22;line-height:1;}
-.hero-quote{font-style:italic;color:var(--gold);font-size:.98rem;}
-.hero-quote-attr{margin-top:.4rem;font-size:.72rem;color:var(--text-muted);font-family:'DM Mono',monospace;}
-
-.scroll-ind{margin-top:2.4rem;display:flex;flex-direction:column;align-items:center;gap:.45rem;opacity:0;animation:fadeUp 1s ease 1.2s forwards;}
-.scroll-ind span{font-size:.66rem;letter-spacing:.2em;color:var(--text-muted);font-family:'DM Mono',monospace;}
-.scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--accent),transparent);animation:sp 2s ease-in-out infinite;}
-@keyframes sp{0%,100%{opacity:.3;}50%{opacity:1;}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
-
-/* ══ STATS ══ */
-.stats-strip{position:relative;z-index:1;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);padding:2.2rem;transition:background .35s;}
-.stats-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1.5rem;text-align:center;}
-.stat-val{font-family:'Playfair Display',serif;font-size:2.7rem;color:var(--accent);display:block;}
-.stat-label{font-size:.8rem;color:var(--text-muted);margin-top:.18rem;}
-
-/* ══ SECTION ══ */
-.section-wrap{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:4.5rem 2rem;}
-.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.4rem;border-bottom:1px solid var(--border);padding-bottom:1.3rem;}
-.section-eyebrow{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;margin-bottom:.42rem;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:var(--text);}
-
-/* ══ CAT TABS ══ */
-#categories{position:relative;z-index:1;}
-.cat-nav{max-width:1300px;margin:0 auto;padding:0 2rem;display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.2rem;}
-.cat-btn{padding:.52rem 1.2rem;border:1px solid var(--border);border-radius:999px;background:transparent;color:var(--text-muted);font-family:var(--font-body);font-size:.88rem;cursor:pointer;transition:all .28s;position:relative;overflow:hidden;}
-.cat-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:0;transition:opacity .28s;border-radius:999px;}
-.cat-btn:hover::before,.cat-btn.active::before{opacity:1;}
-.cat-btn span{position:relative;z-index:1;}
-.cat-btn.active,.cat-btn:hover{color:#fff;border-color:transparent;}
-
-/* ══ CARDS ══ */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:1.35rem;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;cursor:pointer;transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s,border-color .3s;position:relative;}
-.card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 28px 56px rgba(0,0,0,.45),0 0 0 1px rgba(180,142,255,.2);border-color:rgba(180,142,255,.3);}
-.card-img{width:100%;height:185px;background:var(--surface2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.card-img-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4.5rem;}
-.card-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--surface));}
-.card-badge{position:absolute;top:.85rem;right:.85rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.12em;padding:.2rem .52rem;border-radius:999px;border:1px solid;}
-.badge-kavita{border-color:var(--accent);color:var(--accent);background:rgba(180,142,255,.1);}
-.badge-katha{border-color:var(--accent2);color:var(--accent2);background:rgba(255,142,219,.1);}
-.badge-nibandha{border-color:var(--accent3);color:var(--accent3);background:rgba(142,255,212,.1);}
-.badge-lekh{border-color:var(--gold);color:var(--gold);background:rgba(255,217,138,.1);}
-.badge-anya{border-color:#a0a0ff;color:#a0a0ff;background:rgba(160,160,255,.1);}
-.card-body{padding:1.35rem;}
-.card-title{font-size:1.08rem;font-weight:600;color:var(--text);margin-bottom:.42rem;}
-.card-excerpt{font-size:.8rem;color:var(--text-muted);line-height:1.65;}
-.card-meta{margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.card-date{font-family:'DM Mono',monospace;font-size:.66rem;color:var(--text-muted);}
-.card-read{font-family:'DM Mono',monospace;font-size:.66rem;color:var(--accent);}
-.bm-btn{position:absolute;top:.85rem;left:.85rem;background:rgba(10,10,15,.8);border:1px solid var(--border);color:var(--text-muted);border-radius:8px;width:29px;height:29px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.82rem;transition:all .25s;backdrop-filter:blur(8px);}
-.bm-btn.saved{color:var(--gold);border-color:var(--gold);}
-
-/* ══ MODAL ══ */
-#modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(5,5,10,.92);backdrop-filter:blur(18px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:2rem 1rem;}
-#modal-overlay.open{display:flex;}
-.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:24px;max-width:730px;width:100%;padding:3rem;position:relative;margin:auto;animation:mIn .44s cubic-bezier(.34,1.56,.64,1);}
-@keyframes mIn{from{opacity:0;transform:scale(.9) translateY(20px);}to{opacity:1;transform:none;}}
-.modal-close{position:absolute;top:1.35rem;right:1.35rem;background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);border-radius:50%;width:33px;height:33px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;transition:all .25s;}
-.modal-close:hover{color:var(--text);border-color:var(--accent);}
-.modal-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;padding:.2rem .62rem;border-radius:999px;margin-bottom:.85rem;}
-.modal-title{font-family:'Playfair Display',serif;font-size:clamp(1.65rem,4vw,2.75rem);color:var(--text);line-height:1.2;margin-bottom:.85rem;}
-.modal-meta{display:flex;gap:1.3rem;margin-bottom:1.7rem;}
-.modal-meta span{font-family:'DM Mono',monospace;font-size:.66rem;color:var(--text-muted);}
-.modal-progress{height:2px;background:var(--surface2);border-radius:999px;margin-bottom:1.9rem;overflow:hidden;}
-.modal-progress-bar{height:100%;background:linear-gradient(to right,var(--accent),var(--accent2));border-radius:999px;transition:width .12s;}
-.modal-content{font-size:1.04rem;line-height:2.1;color:var(--text);white-space:pre-line;}
-.poetry-line{display:block;}
-
-/* ══ PROFILE ══ */
-#parichay{position:relative;z-index:1;}
-.profile-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:2.7rem;display:grid;grid-template-columns:195px 1fr;gap:2.7rem;align-items:center;position:relative;overflow:hidden;}
-.profile-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--accent3));}
-.profile-avatar{width:195px;height:195px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:4.5rem;border:3px solid var(--border);flex-shrink:0;}
-.profile-name{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--text);}
-.profile-role{color:var(--accent);font-size:.78rem;margin:.38rem 0 1.1rem;font-family:'DM Mono',monospace;letter-spacing:.1em;}
-.profile-bio{color:var(--text-muted);line-height:1.88;font-size:.9rem;}
-.profile-tags{display:flex;flex-wrap:wrap;gap:.42rem;margin-top:1.2rem;}
-.profile-tag{padding:.26rem .72rem;border-radius:999px;border:1px solid var(--border);font-size:.72rem;color:var(--text-muted);font-family:'DM Mono',monospace;transition:all .2s;cursor:default;}
-.profile-tag:hover{border-color:var(--accent);color:var(--accent);}
-
-/* ══ FOOTER ══ */
-footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.75rem 2.4rem;display:flex;align-items:center;justify-content:space-between;background:var(--surface);}
-.footer-logo{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);}
-.footer-copy{font-family:'DM Mono',monospace;font-size:.66rem;color:var(--text-muted);}
-
-/* ══ SEARCH ══ */
-#search-overlay{position:fixed;inset:0;z-index:300;background:rgba(5,5,10,.95);backdrop-filter:blur(20px);display:none;align-items:flex-start;justify-content:center;padding-top:14vh;}
-#search-overlay.open{display:flex;}
-.search-box{width:100%;max-width:650px;background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;animation:mIn .32s ease;}
-.search-input-wrap{display:flex;align-items:center;padding:.95rem 1.35rem;gap:.85rem;border-bottom:1px solid var(--border);}
-.search-icon{font-size:1.05rem;color:var(--text-muted);}
-.search-input{flex:1;background:none;border:none;outline:none;font-family:var(--font-body);font-size:1.1rem;color:var(--text);}
-.search-close{cursor:pointer;color:var(--text-muted);font-size:.95rem;}
-.search-results{padding:.75rem;max-height:46vh;overflow-y:auto;}
-.sri{padding:.72rem .88rem;border-radius:11px;cursor:pointer;transition:background .18s;display:flex;align-items:center;gap:.85rem;}
-.sri:hover{background:var(--surface2);}
-.sri-icon{font-size:1.35rem;}
-.sri-title{font-size:.9rem;color:var(--text);}
-.sri-cat{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--text-muted);}
-
-/* ══ TOAST ══ */
-.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(16px);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.65rem 1.35rem;font-family:'DM Mono',monospace;font-size:.78rem;color:var(--accent);z-index:500;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-
-/* ══ RESPONSIVE ══ */
-@media(max-width:860px){
-  nav{padding:0 1rem;}
-  .nav-links{display:none;}
-  .nav-clock{display:none;}
-  .profile-card{grid-template-columns:1fr;text-align:center;}
-  .profile-avatar{margin:0 auto;}
-  .profile-tags{justify-content:center;}
-  .modal-box{padding:1.8rem 1.3rem;}
-  .hero-clock-wrap{flex-direction:column;gap:.75rem;}
-  .vdiv{width:55px;height:1px;}
+/* BOOKMARK */
+.saved{
+  color:red;
 }
 </style>
 </head>
-<body data-theme="dark">
-<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
 
-<!-- NAV -->
+<body>
+
 <nav>
-  <div class="nav-logo">प्रतीक <span>साहित्य</span></div>
-  <ul class="nav-links">
-    <li><a onclick="filterCat('kavita',null)">कविता</a></li>
-    <li><a onclick="filterCat('katha',null)">कथा</a></li>
-    <li><a onclick="filterCat('nibandha',null)">निबन्ध</a></li>
-    <li><a onclick="filterCat('lekh',null)">लेख</a></li>
-    <li><a onclick="filterCat('anya',null)">अन्य</a></li>
-    <li><a onclick="scrollToSec('parichay')">परिचय</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="nav-clock">
-      <div class="nav-clock-time" id="nav-time">--:-- --</div>
-      <div class="nav-clock-date" id="nav-date">लोड हुँदैछ...</div>
-    </div>
-    <button class="icon-btn" onclick="openSearch()" title="खोज (/)">🔍</button>
-    <button class="icon-btn" onclick="showBookmarks()" title="बुकमार्क">🔖</button>
-    <div class="dot-menu-wrap">
-      <button class="dot-btn" onclick="togglePanel()" title="सेटिङ">⋮</button>
-      <div class="dot-panel" id="dot-panel">
-        <div class="p-label">🎨 थिम छान्नुहोस्</div>
-        <div class="theme-grid" id="theme-grid">
-          <div class="theme-swatch active" data-theme="dark" onclick="applyTheme('dark',this)">
-            <div class="swatch-dot" style="background:linear-gradient(135deg,#b48eff,#ff8edb)"></div>
-            <span class="swatch-label">Purple</span>
-          </div>
-          <div class="theme-swatch" data-theme="midnight" onclick="applyTheme('midnight',this)">
-            <div class="swatch-dot" style="background:linear-gradient(135deg,#38bdf8,#818cf8)"></div>
-            <span class="swatch-label">Midnight</span>
-          </div>
-          <div class="theme-swatch" data-theme="saffron" onclick="applyTheme('saffron',this)">
-            <div class="swatch-dot" style="background:linear-gradient(135deg,#fb923c,#facc15)"></div>
-            <span class="swatch-label">Saffron</span>
-          </div>
-          <div class="theme-swatch" data-theme="forest" onclick="applyTheme('forest',this)">
-            <div class="swatch-dot" style="background:linear-gradient(135deg,#4ade80,#a3e635)"></div>
-            <span class="swatch-label">Forest</span>
-          </div>
-          <div class="theme-swatch" data-theme="rose" onclick="applyTheme('rose',this)">
-            <div class="swatch-dot" style="background:linear-gradient(135deg,#fb7185,#f472b6)"></div>
-            <span class="swatch-label">Rose</span>
-          </div>
-          <div class="theme-swatch" data-theme="light" onclick="applyTheme('light',this)">
-            <div class="swatch-dot" style="background:linear-gradient(135deg,#7c3aed,#db2777)"></div>
-            <span class="swatch-label">Light</span>
-          </div>
-        </div>
-        <div class="p-label" style="margin-top:.1rem">✍️ फन्ट छान्नुहोस्</div>
-        <div class="font-row" id="font-row">
-          <button class="font-btn active" data-font="noto" onclick="applyFont('noto',this)">
-            <span class="fp" style="font-family:'Noto Serif Devanagari',serif">क ख</span>Noto Serif
-          </button>
-          <button class="font-btn" data-font="eczar" onclick="applyFont('eczar',this)">
-            <span class="fp" style="font-family:'Eczar',serif">क ख</span>Eczar
-          </button>
-        </div>
-      </div>
-    </div>
+  <b>📚 साहित्य</b>
+
+  <div>
+    <input type="text" placeholder="खोज्नुहोस्..." oninput="search(this.value)">
+    <button onclick="toggleMode()">🌙</button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-tag">✦ साहित्यिक सङ्ग्रह ✦</div>
-  <h1 class="hero-title">प्रतीक साहित्य</h1>
-  <p class="hero-sub">शब्दहरूको संसारमा स्वागत छ — जहाँ भावना, विचार र कल्पना एकै ठाउँमा बाँधिन्छन्</p>
-
-  <div class="hero-clock-wrap">
-    <div class="hero-clock-box">
-      <div><span class="hero-time" id="hero-time">--:--</span><span class="hero-ampm" id="hero-ampm">--</span></div>
-      <div class="hero-date-ad" id="hero-date-ad">लोड हुँदैछ...</div>
-    </div>
-    <div class="vdiv"></div>
-    <div class="hero-bs-wrap">
-      <span class="bs-label">विक्रम सम्बत्</span>
-      <div class="bs-date" id="hero-bs-date">-- -- ----</div>
-      <div class="bs-day" id="hero-bs-day">--बार</div>
-    </div>
-  </div>
-
-  <div class="hero-quote-box">
-    <p class="hero-quote" id="daily-quote">कविता मनको सबभन्दा गहिरो भावनाको प्रतिध्वनि हो।</p>
-    <p class="hero-quote-attr">— आजको विचार</p>
-  </div>
-  <div class="scroll-ind">
-    <span>तल स्क्रोल गर्नुहोस्</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div><span class="stat-val" id="stat-kavita">0</span><div class="stat-label">कविताहरू</div></div>
-    <div><span class="stat-val" id="stat-katha">0</span><div class="stat-label">कथाहरू</div></div>
-    <div><span class="stat-val" id="stat-nibandha">0</span><div class="stat-label">निबन्धहरू</div></div>
-    <div><span class="stat-val" id="stat-lekh">0</span><div class="stat-label">लेखहरू</div></div>
-    <div><span class="stat-val" id="stat-anya">0</span><div class="stat-label">अन्य</div></div>
-  </div>
+<div class="cat">
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('कविता')">कविता</button>
+  <button onclick="filter('निबन्ध')">निबन्ध</button>
+  <button onclick="filter('लेख')">लेख</button>
 </div>
 
-<!-- CONTENT -->
-<section id="categories">
-  <div class="section-wrap">
-    <div class="section-header">
-      <div>
-        <div class="section-eyebrow">लेखकका सिर्जनाहरू</div>
-        <h2 class="section-title" id="cat-title">सम्पूर्ण सङ्ग्रह</h2>
-      </div>
-      <div id="bk-count" style="display:none;font-family:'DM Mono',monospace;font-size:.76rem;color:var(--gold);">🔖 <span id="bk-num">0</span></div>
-    </div>
-    <div class="cat-nav">
-      <button class="cat-btn active" onclick="filterCat('all',this)"><span>✦ सबै</span></button>
-      <button class="cat-btn" onclick="filterCat('kavita',this)"><span>🌸 कविता</span></button>
-      <button class="cat-btn" onclick="filterCat('katha',this)"><span>📖 कथा</span></button>
-      <button class="cat-btn" onclick="filterCat('nibandha',this)"><span>✍️ निबन्ध</span></button>
-      <button class="cat-btn" onclick="filterCat('lekh',this)"><span>📝 लेख</span></button>
-      <button class="cat-btn" onclick="filterCat('anya',this)"><span>🌿 अन्य</span></button>
-    </div>
-    <div class="cards-grid" id="cards-grid"></div>
-  </div>
-</section>
-
-<!-- PROFILE -->
-<section id="parichay">
-  <div class="section-wrap">
-    <div class="section-header">
-      <div>
-        <div class="section-eyebrow">कवि परिचय</div>
-        <h2 class="section-title">लेखकको बारेमा</h2>
-      </div>
-    </div>
-    <div class="profile-card">
-      <div class="profile-avatar">🖊️</div>
-      <div>
-        <h3 class="profile-name">प्रतीक</h3>
-        <p class="profile-role">SANSKRIT SCHOLAR · POET · THINKER</p>
-        <p class="profile-bio">प्रतीक एक संस्कृत विद्वान, कवि र विचारक हुन् जो पाणिनीय व्याकरण र वैदिक साहित्यमा विशेष रुचि राख्छन्। शब्दहरूको सौन्दर्य र भावनाको गहिराइलाई आफ्नो सिर्जनामार्फत पाठकसँग साझा गर्नु उनको लक्ष्य हो। कविता, कथा र निबन्धका माध्यमबाट नेपाली साहित्यलाई नयाँ दिशा दिन उनी सदैव अग्रसर छन्।</p>
-        <div class="profile-tags">
-          <span class="profile-tag">पाणिनीय व्याकरण</span>
-          <span class="profile-tag">वैदिक साहित्य</span>
-          <span class="profile-tag">नेपाली कविता</span>
-          <span class="profile-tag">दर्शन</span>
-          <span class="profile-tag">संगीत</span>
-          <span class="profile-tag">ग्राफिक डिजाइन</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-logo">प्रतीक साहित्य</div>
-  <div class="footer-copy">© २०८१ · सर्वाधिकार सुरक्षित · शब्दले बाँध्छ संसार</div>
-</footer>
+<div class="grid" id="grid"></div>
 
 <!-- MODAL -->
-<div id="modal-overlay" onclick="closeModal(event)">
+<div class="modal" id="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModalDirect()">✕</button>
-    <div class="modal-badge" id="modal-badge"></div>
-    <h2 class="modal-title" id="modal-title"></h2>
-    <div class="modal-meta"><span id="modal-date"></span><span id="modal-rt"></span></div>
-    <div class="modal-progress"><div class="modal-progress-bar" id="prog-bar" style="width:0%"></div></div>
-    <div class="modal-content" id="modal-content"></div>
+    <h2 id="mTitle"></h2>
+    <p id="mText"></p>
+    <button onclick="closeModal()">Close</button>
   </div>
 </div>
-
-<!-- SEARCH -->
-<div id="search-overlay" onclick="closeSearch(event)">
-  <div class="search-box" onclick="event.stopPropagation()">
-    <div class="search-input-wrap">
-      <span class="search-icon">🔍</span>
-      <input type="text" class="search-input" id="search-input" placeholder="खोज्नुहोस्..." oninput="doSearch(this.value)">
-      <span class="search-close" onclick="closeSearch()">✕</span>
-    </div>
-    <div class="search-results" id="search-results"></div>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
 
 <script>
-/* ── DATA ── */
-const WORKS=[
-  {id:1,cat:'kavita',title:'मनको मौसम',excerpt:'हृदयका भावनाहरू जब शब्दमा ढल्छन्...',emoji:'🌸',date:'२०८१ माघ',rt:'३ मि',
-   content:`मनको मौसम\n─────────────\n\nवर्षाको थोपा जसरी\nमनमा पर्छ तिम्रो सम्झना,\nहरेक बिन्दुमा लुकेको छ\nअनकहा एउटा भावना।\n\nपहाडका ढुङ्गा जस्तै\nअटल छ मेरो प्रेम,\nहावाको झोंका आए पनि\nहल्लिँदैन मेरो नेम।\n\nआकाशको नीलिमामा\nखोज्छु म तिम्रो मुहार,\nतारा बनी टिम्टिमाऊ\nमेरो जीवन सँधैभर।`},
-  {id:2,cat:'kavita',title:'समयको नदी',excerpt:'बग्दै जान्छ समय, फर्कँदैन कहिल्यै...',emoji:'🌊',date:'२०८१ फागुन',rt:'२ मि',
-   content:`समयको नदी\n───────────\n\nबग्दो नदी झैं समय\nरोकिँदैन कसैका लागि,\nहिजोका सुनौला पल\nहराउँछन् बिनाझागी।\n\nमाटोको ढेफ्रे झैं\nहाम्रो जीवन पनि,\nपानीमा घोलिन्छ अन्त्यमा\nबाँकी रहन्छ केही।\n\nतर शब्दहरू अमर छन्\nकागजमा बाँधिन्छन्,\nपुस्तौंपुस्तासम्म\nमनमा साँचिन्छन्।`},
-  {id:3,cat:'kavita',title:'पहाडको बोली',excerpt:'हिमालले के भन्छ, सुन्छौ कि...',emoji:'🏔️',date:'२०८१ चैत',rt:'४ मि',
-   content:`पहाडको बोली\n─────────────\n\nउँचो शिरमा हिउँ ओढेर\nचुपचाप ऊभो छ हिमाल,\nहाम्रो गर्व, हाम्रो साक्षी\nजुगौंजुगको रखवाल।\n\nबादल आउँछन् जान्छन्\nतर ऊ हल्लिँदैन कहिल्यै,\nम पनि पहाड बन्छु\nजीवनका आँधीमा।`},
-  {id:4,cat:'katha',title:'गाउँको बिहान',excerpt:'सूर्योदयसँगै जागृत हुन्छ एउटा गाउँ...',emoji:'🌅',date:'२०८१ पुष',rt:'८ मि',
-   content:`गाउँको बिहान\n──────────────\n\nभोरको पहिलो किरणले जब हिमालको शिरलाई सुनौलो रङमा रंगाउँछ, गाउँ बिस्तारै जाग्न थाल्छ। धुवाँको मुस्लो आकाशमा उठ्छ।\n\nबुढी आमाले उठेर सबभन्दा पहिले तुलसीको बोटलाई पानी चढाउँछिन्। उनका झुर्रिएका हातमा जीवनभरिको परिश्रम र माया लुकेको छ।\n\n"आज पनि राम्रो दिन होस्," उनी मनमनै भन्छिन्।\n\nगाईले डाँक्छे अनि बाछो भाग्छ। केटाकेटीहरू स्कुलको झोला बोकेर दौडिन्छन्।\n\nयही हो गाउँको बिहान — सरल, शान्त, सुन्दर।`},
-  {id:5,cat:'katha',title:'अन्तिम पत्र',excerpt:'उसले लेख्यो एउटा पत्र जुन कहिल्यै पुगेन...',emoji:'✉️',date:'२०८१ माघ',rt:'१२ मि',
-   content:`अन्तिम पत्र\n────────────\n\nप्रिय दीपा,\n\nयो पत्र तिमीकहाँ पुग्छ कि पुग्दैन थाहा छैन। तर लेख्नुपर्छ।\n\nतिमी गएको तीन वर्ष भयो। तर यस घरको हरेक कुनामा तिम्रो उपस्थिति छ।\n\nमलाई माफ गर दीपा। म बुझ्न सकिनँ तिमीलाई। अहिले बुझ्दा धेरै ढिलो भइसक्यो।\n\nसधैं तिम्रो,\nराजेश`},
-  {id:6,cat:'nibandha',title:'भाषाको शक्ति',excerpt:'भाषा मात्र सञ्चारको माध्यम होइन...',emoji:'🔤',date:'२०८१ फागुन',rt:'१० मि',
-   content:`भाषाको शक्ति\n──────────────\n\nभाषा के हो? सतहमा हेर्दा — केही ध्वनि, केही संकेत। तर गहिरिएर हेर्दा, भाषा एउटा सम्पूर्ण ब्रह्माण्ड हो।\n\nपाणिनिले अष्टाध्यायीमा संस्कृत भाषालाई जुन सूक्ष्मतासाथ विश्लेषण गरे, त्यो आजसम्म अतुलनीय छ।\n\nभाषा जोगाउनु भनेको एउटा सभ्यता जोगाउनु हो।`},
-  {id:7,cat:'nibandha',title:'एकान्तको सौन्दर्य',excerpt:'एक्लोपनलाई नकारात्मक रूपमा नहेरौं...',emoji:'🌿',date:'२०८१ चैत',rt:'७ मि',
-   content:`एकान्तको सौन्दर्य\n──────────────────\n\nआधुनिक संसारमा एक्लो हुनु एउटा कमजोरी मानिन्छ। तर के साँच्चिकै यस्तो हो?\n\nबुद्धले बोधि वृक्षमुनि एकान्तमा ज्ञान पाए। एकान्त भनेको शून्यता होइन — यो भित्रतिरको एउटा यात्रा हो।`},
-  {id:8,cat:'lekh',title:'पाणिनीय व्याकरणको प्रासंगिकता',excerpt:'आधुनिक भाषाविज्ञानमा पाणिनिको अवदान...',emoji:'📜',date:'२०८१ पुष',rt:'१५ मि',
-   content:`पाणिनीय व्याकरणको प्रासंगिकता\n────────────────────────────────\n\nपाणिनिको अष्टाध्यायी — ४,००० भन्दा बढी सूत्रहरूको यो ग्रन्थ — मानव इतिहासको सबभन्दा उत्कृष्ट भाषावैज्ञानिक ग्रन्थ हो।\n\nपाणिनिले भाषालाई जसरी नियमबद्ध गरे — यो पद्धति आधुनिक formal grammar र programming language theory संग आश्चर्यजनक रूपमा मेल खान्छ।`},
-  {id:9,cat:'lekh',title:'वैदिक दर्शन र आधुनिकता',excerpt:'प्राचीन वेदको ज्ञान आजको संसारमा...',emoji:'🕉️',date:'२०८१ माघ',rt:'१२ मि',
-   content:`वैदिक दर्शन र आधुनिकता\n────────────────────────\n\n"अहम् ब्रह्मास्मि" — यो एउटा वाक्य मात्र होइन, यो एउटा सम्पूर्ण दर्शन हो।\n\nआस्तिक र नास्तिक — दुवै दर्शन भारतीय चिन्तनमा फस्टाएका छन्। आधुनिकताले यी ज्ञानलाई बिर्सिएको छ।`},
-  {id:10,cat:'anya',title:'गजल: तिम्रो नाम',excerpt:'उर्दू शैलीमा नेपाली गजलको प्रयोग...',emoji:'🌹',date:'२०८१ फागुन',rt:'३ मि',
-   content:`गजल: तिम्रो नाम\n────────────────\n\nहोठले नलिए पनि मनले लिन्छ तिम्रो नाम,\nरातको सन्नाटामा गुञ्जिन्छ तिम्रो नाम।\n\nफूलको सुवास जस्तै हावामा मिसिन्छ,\nहरेक सासमा बस्छ तिम्रो नाम।`},
-  {id:11,cat:'anya',title:'हाइकु सङ्ग्रह',excerpt:'जापानी शैलीमा नेपाली भावना...',emoji:'🍃',date:'२०८१ चैत',rt:'२ मि',
-   content:`हाइकु सङ्ग्रह\n──────────────\n\n— १ —\nहिउँ पग्लिन्छ\nपहाड सम्झन्छ वसन्त\nनदी बग्दछे\n\n— २ —\nरातको चन्द्र\nएक्लो यात्री हेर्दछ\nदुवै बाटोमा\n\n— ३ —\nबिहानको शीत\nतुलसीको पातमा बस्छ\nएउटा ओस थोपा`},
+
+let data=[
+{title:"कविता १",cat:"कविता",text:"मन एउटा सागर हो..."},
+{title:"निबन्ध १",cat:"निबन्ध",text:"शिक्षा जीवनको आधार हो..."},
+{title:"लेख १",cat:"लेख",text:"संस्कृत हाम्रो धरोहर हो..."}
 ];
 
-const QUOTES=[
-  'कविता मनको सबभन्दा गहिरो भावनाको प्रतिध्वनि हो।',
-  'शब्दहरू हराउँदैनन् — तिनले रूप फेर्छन्।',
-  'साहित्य समाजको ऐना हो।',
-  'एउटा राम्रो कथाले हजार वर्षसम्म बाँच्छ।',
-  'भाषा बाँच्छ — जब मान्छेले प्रेम गर्छ।',
-];
+let filtered=data;
 
-/* ── NEPALI CALENDAR ── */
-const NP_MONTHS=['बैशाख','जेठ','असार','साउन','भदौ','असोज','कार्तिक','मङ्सिर','पुष','माघ','फागुन','चैत'];
-const NP_DAYS=['आइतबार','सोमबार','मङ्गलबार','बुधबार','बिहिबार','शुक्रबार','शनिबार'];
-const NP_DIGITS=['०','१','२','३','४','५','६','७','८','९'];
-const AD_MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
-function toNP(n){return String(n).split('').map(d=>NP_DIGITS[+d]||d).join('');}
-
-/* BS lookup table — days per month [year][month 0-11] */
-const BS_TABLE={
-  2080:[31,32,31,32,31,30,30,30,29,30,29,31],
-  2081:[31,31,32,32,31,30,30,30,29,30,30,30],
-  2082:[31,32,31,32,31,30,30,30,29,30,30,30],
-  2083:[31,31,31,32,30,31,30,29,30,29,30,30],
-  2084:[31,31,32,31,31,31,30,29,30,29,30,30],
-};
-/* Epoch: BS 2080 Baishakh 1 = AD 2023 April 14 */
-function adToBS(date){
-  const EPOCH_AD=new Date(2023,3,14); // Apr 14 2023 = BS 2080/01/01
-  let days=Math.round((date-EPOCH_AD)/(86400000));
-  let y=2080,m=0;
-  for(;;){
-    const tbl=BS_TABLE[y];
-    if(!tbl) break;
-    for(let mi=0;mi<12;mi++){
-      if(days<tbl[mi]) return{y,m:mi+1,d:days+1};
-      days-=tbl[mi];
-    }
-    y++;
-  }
-  // fallback estimate
-  return{y:2081,m:1,d:1};
-}
-
-function updateClock(){
-  const now=new Date();
-  let h=now.getHours(),mi=now.getMinutes(),s=now.getSeconds();
-  const ampm=h>=12?'PM':'AM';
-  const h12=h%12||12;
-  const pad=n=>String(n).padStart(2,'0');
-
-  const bs=adToBS(now);
-  const bsStr=`${toNP(bs.d)} ${NP_MONTHS[bs.m-1]} ${toNP(bs.y)}`;
-  const dayNP=NP_DAYS[now.getDay()];
-  const adStr=`${now.getDate()} ${AD_MONTHS[now.getMonth()]} ${now.getFullYear()}`;
-
-  // Hero
-  const ht=document.getElementById('hero-time');
-  if(ht) ht.textContent=`${pad(h12)}:${pad(mi)}`;
-  const ha=document.getElementById('hero-ampm');
-  if(ha) ha.textContent=ampm;
-  const hd=document.getElementById('hero-date-ad');
-  if(hd) hd.textContent=adStr;
-  const hbs=document.getElementById('hero-bs-date');
-  if(hbs) hbs.textContent=bsStr;
-  const hbd=document.getElementById('hero-bs-day');
-  if(hbd) hbd.textContent=dayNP;
-
-  // Nav
-  const nt=document.getElementById('nav-time');
-  if(nt) nt.textContent=`${pad(h12)}:${pad(mi)}:${pad(s)} ${ampm}`;
-  const nd=document.getElementById('nav-date');
-  if(nd) nd.textContent=`${bsStr} · ${dayNP}`;
-}
-
-/* ── THEME / FONT ── */
-function applyTheme(t,el){
-  document.body.setAttribute('data-theme',t);
-  document.querySelectorAll('.theme-swatch').forEach(s=>s.classList.toggle('active',s.dataset.theme===t));
-  localStorage.setItem('ps_theme',t);
-  toast('थिम बदलियो ✓');
-}
-function applyFont(f,el){
-  const map={noto:"'Noto Serif Devanagari',serif",eczar:"'Eczar',serif"};
-  document.documentElement.style.setProperty('--font-body',map[f]);
-  document.querySelectorAll('.font-btn').forEach(b=>b.classList.toggle('active',b.dataset.font===f));
-  localStorage.setItem('ps_font',f);
-  toast('फन्ट बदलियो ✓');
-}
-function togglePanel(){
-  document.getElementById('dot-panel').classList.toggle('open');
-}
-document.addEventListener('click',e=>{
-  const w=document.querySelector('.dot-menu-wrap');
-  if(w&&!w.contains(e.target)) document.getElementById('dot-panel').classList.remove('open');
-});
-
-/* ── STATE ── */
-let bookmarks=JSON.parse(localStorage.getItem('ps_bm')||'[]');
-
-/* ── INIT ── */
-document.addEventListener('DOMContentLoaded',()=>{
-  const t=localStorage.getItem('ps_theme')||'dark';
-  document.body.setAttribute('data-theme',t);
-  document.querySelectorAll('.theme-swatch').forEach(s=>s.classList.toggle('active',s.dataset.theme===t));
-
-  const f=localStorage.getItem('ps_font')||'noto';
-  const fm={noto:"'Noto Serif Devanagari',serif",eczar:"'Eczar',serif"};
-  document.documentElement.style.setProperty('--font-body',fm[f]);
-  document.querySelectorAll('.font-btn').forEach(b=>b.classList.toggle('active',b.dataset.font===f));
-
-  document.getElementById('daily-quote').textContent=QUOTES[Math.floor(Math.random()*QUOTES.length)];
-  updateClock(); setInterval(updateClock,1000);
-  renderCards('all'); animateStats(); updateBKCount();
-});
-
-/* ── FILTER ── */
-function filterCat(cat,btn){
-  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-  const titles={all:'सम्पूर्ण सङ्ग्रह',kavita:'कविताहरू',katha:'कथाहरू',nibandha:'निबन्धहरू',lekh:'लेखहरू',anya:'अन्य सिर्जनाहरू'};
-  document.getElementById('cat-title').textContent=titles[cat]||'सम्पूर्ण सङ्ग्रह';
-  renderCards(cat);
-  document.getElementById('categories').scrollIntoView({behavior:'smooth',block:'start'});
-}
-function animateStats(){
-  ['kavita','katha','nibandha','lekh','anya'].forEach(c=>{
-    const count=WORKS.filter(w=>w.cat===c).length;
-    const el=document.getElementById('stat-'+c);
-    let i=0;const ti=setInterval(()=>{el.textContent=i;if(i>=count)clearInterval(ti);i++;},130);
-  });
-}
-
-/* ── CARDS ── */
-function catLabel(c){return{kavita:'कविता',katha:'कथा',nibandha:'निबन्ध',lekh:'लेख',anya:'अन्य'}[c]||c;}
-function renderCards(cat){
-  const grid=document.getElementById('cards-grid');
-  const list=cat==='all'?WORKS:WORKS.filter(w=>w.cat===cat);
-  grid.innerHTML='';
-  list.forEach((w,i)=>{
-    const sv=bookmarks.includes(w.id);
-    const c=document.createElement('div');
-    c.className='card';
-    c.style.cssText=`opacity:0;animation:fadeUp .5s ease ${i*.07}s forwards;`;
-    c.innerHTML=`
-      <button class="bm-btn${sv?' saved':''}" onclick="toggleBM(event,${w.id})">${sv?'🔖':'🏷️'}</button>
-      <div class="card-img">
-        <div class="card-img-bg">${w.emoji}</div>
-        <div class="card-img-ov"></div>
-        <span class="card-badge badge-${w.cat}">${catLabel(w.cat)}</span>
+function render(){
+  let grid=document.getElementById("grid");
+  grid.innerHTML="";
+  filtered.forEach((d,i)=>{
+    let saved=localStorage.getItem(d.title);
+    grid.innerHTML+=`
+      <div class="card">
+        <h3 onclick="openModal(${i})">${d.title}</h3>
+        <button onclick="save('${d.title}',this)" class="${saved?'saved':''}">★</button>
       </div>
-      <div class="card-body">
-        <h3 class="card-title">${w.title}</h3>
-        <p class="card-excerpt">${w.excerpt}</p>
-        <div class="card-meta">
-          <span class="card-date">📅 ${w.date}</span>
-          <span class="card-read">⏱ ${w.rt}</span>
-        </div>
-      </div>`;
-    c.addEventListener('click',e=>{if(!e.target.classList.contains('bm-btn'))openWork(w);});
-    grid.appendChild(c);
+    `;
   });
 }
 
-/* ── BOOKMARKS ── */
-function toggleBM(e,id){
-  e.stopPropagation();
-  bookmarks=bookmarks.includes(id)?bookmarks.filter(b=>b!==id):[...bookmarks,id];
-  localStorage.setItem('ps_bm',JSON.stringify(bookmarks));
-  const btn=e.currentTarget;
-  const sv=bookmarks.includes(id);
-  btn.textContent=sv?'🔖':'🏷️';
-  btn.classList.toggle('saved',sv);
-  updateBKCount();
-  toast(sv?'बुकमार्क गरियो 🔖':'हटाइयो');
-}
-function updateBKCount(){
-  const el=document.getElementById('bk-count');
-  document.getElementById('bk-num').textContent=bookmarks.length;
-  el.style.display=bookmarks.length?'block':'none';
-}
-function showBookmarks(){
-  if(!bookmarks.length){toast('कुनै बुकमार्क छैन');return;}
-  document.getElementById('cat-title').textContent='बुकमार्क गरिएका';
-  const grid=document.getElementById('cards-grid');
-  grid.innerHTML='';
-  WORKS.filter(w=>bookmarks.includes(w.id)).forEach((w,i)=>{
-    const c=document.createElement('div');
-    c.className='card';
-    c.style.cssText=`opacity:0;animation:fadeUp .5s ease ${i*.07}s forwards;`;
-    c.innerHTML=`<div class="card-img"><div class="card-img-bg">${w.emoji}</div><div class="card-img-ov"></div><span class="card-badge badge-${w.cat}">${catLabel(w.cat)}</span></div><div class="card-body"><h3 class="card-title">${w.title}</h3><p class="card-excerpt">${w.excerpt}</p><div class="card-meta"><span class="card-date">📅 ${w.date}</span><span class="card-read">⏱ ${w.rt}</span></div></div>`;
-    c.onclick=()=>openWork(w);
-    grid.appendChild(c);
-  });
-  document.getElementById('categories').scrollIntoView({behavior:'smooth'});
+render();
+
+/* FILTER */
+function filter(c){
+  filtered = c==="all"?data:data.filter(d=>d.cat===c);
+  render();
 }
 
-/* ── MODAL ── */
-function openWork(w){
-  const bc={kavita:'badge-kavita',katha:'badge-katha',nibandha:'badge-nibandha',lekh:'badge-lekh',anya:'badge-anya'};
-  const badge=document.getElementById('modal-badge');
-  badge.textContent=catLabel(w.cat); badge.className='modal-badge '+bc[w.cat];
-  document.getElementById('modal-title').textContent=w.title;
-  document.getElementById('modal-date').textContent='📅 '+w.date;
-  document.getElementById('modal-rt').textContent='⏱ '+w.rt;
-  document.getElementById('modal-content').innerHTML=w.content.split('\n').map(l=>`<span class="poetry-line">${l||'&nbsp;'}</span>`).join('');
-  document.getElementById('prog-bar').style.width='0%';
-  const ov=document.getElementById('modal-overlay');
-  ov.classList.add('open'); document.body.style.overflow='hidden';
-  ov.onscroll=()=>{
-    const box=document.querySelector('.modal-box');
-    const pct=Math.min(100,Math.round((ov.scrollTop/(box.scrollHeight-ov.clientHeight))*100));
-    document.getElementById('prog-bar').style.width=pct+'%';
-  };
+/* SEARCH */
+function search(q){
+  filtered=data.filter(d=>d.title.includes(q));
+  render();
 }
-function closeModal(e){if(e.target===document.getElementById('modal-overlay'))closeModalDirect();}
-function closeModalDirect(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
 
-/* ── SEARCH ── */
-function openSearch(){document.getElementById('search-overlay').classList.add('open');setTimeout(()=>document.getElementById('search-input').focus(),80);}
-function closeSearch(e){
-  if(!e||e.target===document.getElementById('search-overlay')){
-    document.getElementById('search-overlay').classList.remove('open');
-    document.getElementById('search-input').value='';
-    document.getElementById('search-results').innerHTML='';
+/* MODAL */
+function openModal(i){
+  document.getElementById("modal").classList.add("show");
+  document.getElementById("mTitle").innerText=filtered[i].title;
+  document.getElementById("mText").innerText=filtered[i].text;
+}
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
+}
+
+/* BOOKMARK */
+function save(title,btn){
+  if(localStorage.getItem(title)){
+    localStorage.removeItem(title);
+    btn.classList.remove("saved");
+  }else{
+    localStorage.setItem(title,true);
+    btn.classList.add("saved");
   }
 }
-function doSearch(q){
-  const res=document.getElementById('search-results');
-  if(!q.trim()){res.innerHTML='';return;}
-  const m=WORKS.filter(w=>w.title.includes(q)||w.excerpt.includes(q)||w.content.includes(q));
-  res.innerHTML=m.length
-    ?m.map(w=>`<div class="sri" onclick="closeSearch();openWork(${JSON.stringify(w).replace(/"/g,'&quot;')})"><span class="sri-icon">${w.emoji}</span><div><div class="sri-title">${w.title}</div><div class="sri-cat">${catLabel(w.cat)}</div></div></div>`).join('')
-    :`<div style="padding:1.4rem;text-align:center;color:var(--text-muted);font-size:.86rem;">कुनै नतिजा फेला परेन।</div>`;
+
+/* THEME */
+function toggleMode(){
+  let t=document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme",t==="light"?"midnight":"light");
 }
 
-/* ── TOAST ── */
-let tt;
-function toast(msg){
-  const el=document.getElementById('toast');
-  el.textContent=msg; el.classList.add('show');
-  clearTimeout(tt); tt=setTimeout(()=>el.classList.remove('show'),2200);
-}
-
-/* ── UTILS ── */
-function scrollToSec(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closeModalDirect();closeSearch();}
-  if(e.key==='/'&&!document.getElementById('search-overlay').classList.contains('open')){e.preventDefault();openSearch();}
-});
 </script>
+
 </body>
 </html>
